@@ -13,6 +13,10 @@ const connectDB = async () => {
   }
 };
 
+// Log the MongoDB URI for debugging
+
+console.log("Connecting to:", process.env.MONGO_URI);
+
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected');
 });
