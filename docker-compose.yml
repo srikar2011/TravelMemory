@@ -12,7 +12,7 @@ services:
     volumes:
       - mongo-data:/data/db
     ports:
-      - "27019:27017"  
+      - "27017:27017"  
 
   backend:
     build: ./backend
@@ -22,7 +22,7 @@ services:
     networks: 
       - my-network  
     environment:
-      MONGO_URI: mongodb://admin:password@mongo:27019/testdb?authSource=admin
+      MONGO_URI: mongodb://admin:password@mongo:27017/testdb?authSource=admin
     depends_on:
       - mongo
 
@@ -40,7 +40,14 @@ services:
 
 networks:
   my-network:
-    external: true
 
 volumes:
   mongo-data:    
+
+environment:
+    REACT_APP_API_URL: http://backend:3001
+    MONGO_URI: mongodb://admin:password@mongo:27017/testdb?authSource=admin
+
+depends_on:
+      mongo:
+        condition: service_started
