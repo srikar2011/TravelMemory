@@ -1,21 +1,28 @@
-const express = require('express')
-const cors = require('cors')
-require('dotenv').config()
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 
-const app = express()
-PORT = process.env.PORT
-const conn = require('./conn')
-app.use(express.json())
-app.use(cors())
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const tripRoutes = require('./routes/trip.routes')
+// DB connection
+const connectDB = require('./conn');
 
-app.use('/trip', tripRoutes) // http://localhost:3001/trip --> POST/GET/GET by ID
+app.use(express.json());
+app.use(cors());
 
-app.get('/hello', (req,res)=>{
-    res.send('Hello World!')
-})
+const tripRoutes = require('./routes/trip.routes');
+app.use('/trip', tripRoutes);
 
-app.listen(PORT, ()=>{
-    console.log(`Server started at http://localhost:${PORT}`)
-})
+app.get('/hello', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Start server only after DB connects
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server started at http://localhost:${PORT}`);
+  });
+}).catch(err => {
+  console.error("DB connection failed:", err);
+});

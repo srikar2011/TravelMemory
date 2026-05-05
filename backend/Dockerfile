@@ -1,8 +1,12 @@
-FROM node:25-alpine3.22
+FROM node:20-alpine
+
 WORKDIR /app
+
+COPY package*.json ./
+RUN npm install --omit=dev
+
 COPY . .
-RUN npm install
-ENV PORT=3001
-ENV MONGO_URI=""
+
 EXPOSE 3001
-CMD ["node", "index.js"]
+
+CMD ["npm", "start"]
