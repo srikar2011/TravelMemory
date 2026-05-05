@@ -1,7 +1,6 @@
-const db = require("../conn");
-const mongoose = require("../conn").mongoose;
+const mongoose = require('mongoose');
 
-const tripSchema = mongoose.Schema({
+const tripSchema = new mongoose.Schema({
   tripName: {
     type: String,
     required: true,
@@ -45,10 +44,10 @@ const tripSchema = mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now()
-  },
+    default: Date.now
+  }
 });
 
+const Trip = mongoose.model('tripdetails', tripSchema);
 
-const Trip = mongoose.model('tripdetails', tripSchema)
-module.exports = { Trip }
+module.exports = { Trip };
