@@ -42,12 +42,4 @@ networks:
   my-network:
 
 volumes:
-  mongo-data:    
-
-environment:
-    REACT_APP_API_URL: http://backend:3001
-    MONGO_URI: mongodb://admin:password@mongo:27017/testdb?authSource=admin
-
-depends_on:
-      mongo:
-        condition: service_started
+  mongo-data:
