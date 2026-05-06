@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 export default function FeaturedCard(props) {
     const navigate = useNavigate()
     const visitDetails = () => {
-        navigate(`/experiencedetails/${props.id}`)
+        navigate(`/api/experiencedetails/${props.id}`)
     }
   return (
     <div>
