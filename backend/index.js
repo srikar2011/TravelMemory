@@ -12,9 +12,9 @@ app.use(express.json());
 app.use(cors());
 
 const tripRoutes = require('./routes/trip.routes');
-app.use('/trip', tripRoutes);
+app.use('/api/trip', tripRoutes);
 
-app.get('/hello', (req, res) => {
+app.get('/api/hello', (req, res) => {
   res.send('Hello World!');
 });
 
@@ -29,7 +29,7 @@ connectDB().then(() => {
 
 // Health check endpoint
 
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
 
