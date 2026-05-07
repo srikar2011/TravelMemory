@@ -10,15 +10,15 @@ import ExperienceDetails from './components/pages/ExperienceDetails';
 
 const router = createBrowserRouter([
   {
-    path: '/api',
+    path: '/',
     element: <Home></Home>
   },
   {
-    path: '/api/addexperience',
+    path: '/addexperience',
     element: <AddExperience></AddExperience>
   },
   {
-    path: '/api/experiencedetails/:id',
+    path: '/experiencedetails/:id',
     element: <ExperienceDetails></ExperienceDetails>
   }
 ])
