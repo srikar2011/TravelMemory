@@ -20,6 +20,7 @@ export default function Home() {
                 tripType={e.tripType}
                 description={e.shortDescription}
                 id={e._id}
+                image={e.image}
               ></FeaturedCard>
             );
           } else {
@@ -34,6 +35,7 @@ export default function Home() {
                 tripType={e.tripType}
                 description={e.shortDescription}
                 id={e._id}
+                image={e.image}
               ></Card>
             );
           } else {

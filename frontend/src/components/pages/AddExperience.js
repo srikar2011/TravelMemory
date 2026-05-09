@@ -68,58 +68,58 @@ export default function AddExperience() {
     }else{
       return (
         <div style={{ margin: "2%" }}>
-          <div class="mb-3">
-            <label for="tripName" class="form-label">
+          <div className="mb-3">
+            <label for="tripName" className="form-label">
               Trip Name
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="tripName"
               placeholder="Add your Trip Name"
               value={formdata.tripName}
               onChange={(e) => setFormdata({...formdata, tripName: e.target.value})}
             ></input>
           </div>
-          <div class="mb-3">
-            <label for="tripDate" class="form-label">
+          <div className="mb-3">
+            <label for="tripDate" className="form-label">
               Trip Date
             </label>
-            <div class="row">
-              <div class="col-6">
-                <input type="date" class="form-control" id="startDate"
+            <div className="row">
+              <div className="col-6">
+                <input type="date" className="form-control" id="startDate"
                 value={formdata.startDateOfJourney}
                 onChange={(e)=> setFormdata({...formdata, startDateOfJourney: e.target.value})}
                 ></input>
               </div>
-              <div class="col-6">
-                <input type="date" class="form-control" id="endDate"
+              <div className="col-6">
+                <input type="date" className="form-control" id="endDate"
                 value={formdata.endDateOfJourney}
                 onChange={(e)=> setFormdata({...formdata, endDateOfJourney: e.target.value})}
                 ></input>
               </div>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="nameOfHotels" class="form-label">
+          <div className="mb-3">
+            <label for="nameOfHotels" className="form-label">
               Name of Hotels
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="nameOfHotels"
               placeholder="Add your Hotel Name"
               value={formdata.nameOfHotels}
             onChange={(e)=> setFormdata({...formdata, nameOfHotels: e.target.value})}
             ></input>
           </div>
-          <div class="mb-3">
-            <div class="row">
-              <div class="col-6">
-                <label for="nameOfHotels" class="form-label">
+          <div className="mb-3">
+            <div className="row">
+              <div className="col-6">
+                <label for="nameOfHotels" className="form-label">
                   Trip Type
                 </label>
-                <select class="form-select" id="tripType" aria-label="tripType"
+                <select className="form-select" id="tripType" aria-label="tripType"
                 value={formdata.tripType}
                 onChange={(e)=> setFormdata({...formdata, tripType: e.target.value})}
                 >
@@ -131,13 +131,13 @@ export default function AddExperience() {
                   <option value="business">Business</option>
                 </select>
               </div>
-              <div class="col-6">
-                <label for="totalCost" class="form-label">
+              <div className="col-6">
+                <label for="totalCost" className="form-label">
                   Total Cost
                 </label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="totalCost"
                   placeholder="99999"
                   value={formdata.totalCost}
@@ -146,27 +146,27 @@ export default function AddExperience() {
               </div>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="placesVisited" class="form-label">
+          <div className="mb-3">
+            <label for="placesVisited" className="form-label">
               Places Visited
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="placesVisited"
               placeholder="Delhi, Paris, London, etc."
               value={formdata.placesVisited}
                 onChange={(e)=> setFormdata({...formdata, placesVisited: e.target.value})}
             ></input>
           </div>
-          <div class="mb-3">
-            <label for="featured" class="form-label">
+          <div className="mb-3">
+            <label for="featured" className="form-label">
               Featured Trip?
             </label>
-            <div class="form-check">
+            <div className="form-check">
               <input
                 type="radio"
-                class="form-check-input"
+                className="form-check-input"
                 id="true"
                 value={true}
                 onChange={(e)=> setFormdata({...formdata, featured: JSON.parse(e.target.value)})}
@@ -174,10 +174,10 @@ export default function AddExperience() {
               ></input>
               <label>True</label>
             </div>
-            <div class="form-check">
+            <div className="form-check">
               <input
                 type="radio"
-                class="form-check-input"
+                className="form-check-input"
                 id="false"
                 value={false}
                 onChange={(e)=> setFormdata({...formdata, featured: JSON.parse(e.target.value)})}
@@ -186,25 +186,25 @@ export default function AddExperience() {
               <label>False</label>
             </div>
           </div>
-          <div class="mb-3">
-            <label for="image" class="form-label">
+          <div className="mb-3">
+            <label for="image" className="form-label">
               Image Link
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="image"
               placeholder="http://xyz.com/image.png"
               value={formdata.image}
             onChange={(e)=> setFormdata({...formdata, image: e.target.value})}
             ></input>
           </div>
-          <div class="mb-3">
-            <label for="shortDescription" class="form-label">
+          <div className="mb-3">
+            <label for="shortDescription" className="form-label">
               Short Description
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="shortDescription"
               rows="2"
               placeholder="Write Short Description"
@@ -212,12 +212,12 @@ export default function AddExperience() {
                 onChange={(e)=> setFormdata({...formdata, shortDescription: e.target.value})}
             ></textarea>
           </div>
-          <div class="mb-3">
-            <label for="experience" class="form-label">
+          <div className="mb-3">
+            <label for="experience" className="form-label">
               Experience
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="experience"
               rows="5"
               placeholder="Write Complete Details about your experience in the trip."
@@ -225,8 +225,8 @@ export default function AddExperience() {
                 onChange={(e)=> setFormdata({...formdata, experience: e.target.value})}
             ></textarea>
           </div>
-          <div class="mb-3" style={{ textAlign: "center"}}>
-            <button type="submit" class="btn btn-primary" onClick={submitForm}>Submit</button>
+          <div className="mb-3" style={{ textAlign: "center"}}>
+            <button type="submit" className="btn btn-primary" onClick={submitForm}>Submit</button>
           </div>
         </div>
       );
