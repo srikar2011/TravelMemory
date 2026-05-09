@@ -12,14 +12,14 @@ export default function FeaturedCard(props) {
     return (
         <div>
             <div
-                classNameName="card"
+                className="card"
                 style={{
                     marginBottom: "2%",
                     marginTop: "2%"
                 }}
             >
 
-                <div classNameName="card-header">
+                <div className="card-header">
                     Featured
                 </div>
 
@@ -36,22 +36,22 @@ export default function FeaturedCard(props) {
                     }}
                 />
 
-                <div classNameName="card-body">
+                <div className="card-body">
 
-                    <h5 classNameName="card-title">
+                    <h5 className="card-title">
                         {props.title}
                     </h5>
 
-                    <h6 classNameName="card-subtitle mb-2 text-body-secondary">
+                    <h6 className="card-subtitle mb-2 text-body-secondary">
                         {props.tripType}
                     </h6>
 
-                    <p classNameName="card-text">
+                    <p className="card-text">
                         {props.description}
                     </p>
 
                     <button
-                        classNameName="btn btn-success"
+                        className="btn btn-success"
                         onClick={visitDetails}
                     >
                         More Details
