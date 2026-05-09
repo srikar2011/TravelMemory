@@ -17,12 +17,49 @@ export default function AddExperience() {
             featured: false,
             shortDescription: ""
     })
-    const submitForm = () => {
-        setLoading(true);
-        console.log(formdata)
-        axios.post(`${baseUrl}/api/trip`, formdata)
-        setLoading(false)
-    }
+    const submitForm = async () => {
+  try {
+    setLoading(true);
+
+    console.log("Submitting form:", formdata);
+
+    const response = await axios.post(
+      `${baseUrl}/api/trip`,
+      formdata
+    );
+
+    console.log("Success:", response.data);
+
+    alert("Trip added successfully!");
+
+    setFormdata({
+      tripName: "",
+      startDateOfJourney: "",
+      endDateOfJourney: "",
+      nameOfHotels: "",
+      placesVisited: "",
+      totalCost: 0,
+      experience: "",
+      image: "",
+      tripType: "",
+      featured: false,
+      shortDescription: ""
+    });
+
+  } catch (err) {
+
+    console.error("POST Error:", err);
+
+    alert(
+      err.response?.data?.message ||
+      "Failed to add trip"
+    );
+
+  } finally {
+
+    setLoading(false);
+  }
+};
 
     if(loading==true){
       return(
